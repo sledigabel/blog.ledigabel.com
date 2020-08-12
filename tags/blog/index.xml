@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>blog on Seb&#39;s corner</title>
+    <link>https://sledigabel.github.io/tags/blog/</link>
+    <description>Recent content in blog on Seb&#39;s corner</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 09 Oct 2019 11:33:46 +0100</lastBuildDate>
+    
+	<atom:link href="https://sledigabel.github.io/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>My first post!</title>
+      <link>https://sledigabel.github.io/posts/my-first-post/</link>
+      <pubDate>Wed, 09 Oct 2019 11:33:46 +0100</pubDate>
+      
+      <guid>https://sledigabel.github.io/posts/my-first-post/</guid>
+      <description>&lt;h1 id=&#34;new-post-new-site-new-life&#34;&gt;New post, new site, new life&lt;/h1&gt;
+&lt;p&gt;Hello readers :-) welcome to my blog.&lt;/p&gt;
+&lt;p&gt;Got some time to try out &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; and actually start a blog.
+Will post here some findings, investigations and other things.&lt;/p&gt;
+&lt;p&gt;Stay tuned ;-)&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

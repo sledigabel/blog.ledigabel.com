@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>automation on Seb&#39;s corner</title>
+    <link>https://sledigabel.github.io/tags/automation/</link>
+    <description>Recent content in automation on Seb&#39;s corner</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 21 May 2020 08:43:54 +0100</lastBuildDate>
+    
+	<atom:link href="https://sledigabel.github.io/tags/automation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Set up Hugo and Github actions</title>
+      <link>https://sledigabel.github.io/posts/hugo-and-github-actions/</link>
+      <pubDate>Thu, 21 May 2020 08:43:54 +0100</pubDate>
+      
+      <guid>https://sledigabel.github.io/posts/hugo-and-github-actions/</guid>
+      <description>&lt;h1 id=&#34;tldr&#34;&gt;TL;DR&lt;/h1&gt;
+&lt;p&gt;Hugo is a powerful static blog generator, Github pages can host a static website from a github repository, Github actions can trigger automation based on commits. It is like those three things were made to come together.&lt;/p&gt;
+&lt;h1 id=&#34;hugo&#34;&gt;Hugo&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt; is a powerful static blog generator written in Go.
+It has great features, great themes and a large community, so when I was looking for a static website generator I didn&amp;rsquo;t look further.&lt;/p&gt;
+&lt;h2 id=&#34;the-get-started-bit&#34;&gt;The Get-Started bit&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://gohugo.io/getting-started/quick-start/&#34;&gt;The &lt;em&gt;standard&lt;/em&gt; way of running hugo is&lt;/a&gt;:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Initialise your Hugo site and create a new repository for your blog&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;hugo new site MySite
+cd MySite
+git init
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Install a theme&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now two things:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the theme is recommended to be installed as a submodule.&lt;/li&gt;
+&lt;li&gt;I &lt;em&gt;personally&lt;/em&gt; cloned the theme to allow personal tweaks but also to track changes separately from the upstream repo.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can find my cloned theme &lt;a href=&#34;https://github.com/sledigabel/hugo-coder&#34;&gt;here&lt;/a&gt;. It&amp;rsquo;s a clone from &lt;a href=&#34;https://github.com/luizdepra/hugo-coder,&#34;&gt;https://github.com/luizdepra/hugo-coder,&lt;/a&gt; which I think looks amazing.&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Add content and render your website&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;hugo new posts/my-first-post.md
+&lt;span style=&#34;color:#75715e&#34;&gt;# edit the content/posts/my-first-post.md&lt;/span&gt;
+hugo server -D &lt;span style=&#34;color:#75715e&#34;&gt;# will run a local website and continuously refresh the content&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Generate your static website.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;hugo -D &lt;span style=&#34;color:#75715e&#34;&gt;# all content is created in ./public/&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Now what?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;You&amp;rsquo;re meant to take all files in the public directory and copy it into your web server, ready to serve requests.
+Typically you&amp;rsquo;d use SFTP, or upload the content to S3 using static pages.&lt;/p&gt;
+&lt;h1 id=&#34;github&#34;&gt;GitHub&lt;/h1&gt;
+&lt;h2 id=&#34;github-pages&#34;&gt;Github Pages&lt;/h2&gt;
+&lt;p&gt;Github has been offering &lt;a href=&#34;https://pages.github.com/&#34;&gt;web hosting&lt;/a&gt; as part of &lt;a href=&#34;https://en.wikipedia.org/wiki/GitHub#GitHub_Pages&#34;&gt;its free tier for a long time&lt;/a&gt;.
+In a nutshell, the content of the git repo is exposed statically in a web server under your &lt;code&gt;&amp;lt;account_id&amp;gt;.github.io&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;There&amp;rsquo;s just about a million posts from various people about how to use them.
+To name a few:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://gohugo.io/hosting-and-deployment/hosting-on-github/&#34;&gt;Hugo and hosting pages on github&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://medium.com/@svinkle/publish-and-share-your-own-website-for-free-with-github-2eff049a1cb5&#34;&gt;A blog post about getting started by Scott Vinkle&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.teamtreehouse.com/using-github-pages-to-host-your-website&#34;&gt;Same from Matt West at Treehouse&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You get the idea.&lt;/p&gt;
+&lt;h2 id=&#34;github-action&#34;&gt;Github action&lt;/h2&gt;
+&lt;p&gt;That&amp;rsquo;s where things get really interesting.
+&lt;a href=&#34;https://github.com/features/actions&#34;&gt;Github Actions&lt;/a&gt; was introduced by Github &lt;a href=&#34;https://github.blog/2019-08-08-github-actions-now-supports-ci-cd/&#34;&gt;not too long ago&lt;/a&gt;.
+It&amp;rsquo;s got a free tier, providing you run your automation on linux and you&amp;rsquo;re not hammering their servers.&lt;/p&gt;
+&lt;p&gt;Again, plenty of tutorials and excellent documentation online. The gist of it is:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CI/CD configuration stored in a &lt;code&gt;.github&lt;/code&gt; directory as YAML or JSON&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;Actions&amp;rdquo; are essentially off-the-shelf containers (rebuilt or generated at run time), you can pick some from the market place or come up with your own.&lt;/li&gt;
+&lt;li&gt;Integration with the github UI, get quick feedback on commits, push or PRs.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;set-up&#34;&gt;Set up&lt;/h1&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
