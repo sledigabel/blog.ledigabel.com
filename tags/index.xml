@@ -6,24 +6,24 @@
     <description>Recent content in Tags on Seb&#39;s corner</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 21 May 2020 08:43:54 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 12 Aug 2020 22:09:43 +0200</lastBuildDate>
     
 	<atom:link href="https://blog.ledigabel.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>automation</title>
-      <link>https://blog.ledigabel.com/tags/automation/</link>
-      <pubDate>Thu, 21 May 2020 08:43:54 +0100</pubDate>
+      <title>actions</title>
+      <link>https://blog.ledigabel.com/tags/actions/</link>
+      <pubDate>Wed, 12 Aug 2020 22:09:43 +0200</pubDate>
       
-      <guid>https://blog.ledigabel.com/tags/automation/</guid>
+      <guid>https://blog.ledigabel.com/tags/actions/</guid>
       <description></description>
     </item>
     
     <item>
       <title>github</title>
       <link>https://blog.ledigabel.com/tags/github/</link>
-      <pubDate>Thu, 21 May 2020 08:43:54 +0100</pubDate>
+      <pubDate>Wed, 12 Aug 2020 22:09:43 +0200</pubDate>
       
       <guid>https://blog.ledigabel.com/tags/github/</guid>
       <description></description>
@@ -32,9 +32,27 @@
     <item>
       <title>hugo</title>
       <link>https://blog.ledigabel.com/tags/hugo/</link>
-      <pubDate>Thu, 21 May 2020 08:43:54 +0100</pubDate>
+      <pubDate>Wed, 12 Aug 2020 22:09:43 +0200</pubDate>
       
       <guid>https://blog.ledigabel.com/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ssl</title>
+      <link>https://blog.ledigabel.com/tags/ssl/</link>
+      <pubDate>Wed, 12 Aug 2020 22:09:43 +0200</pubDate>
+      
+      <guid>https://blog.ledigabel.com/tags/ssl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>automation</title>
+      <link>https://blog.ledigabel.com/tags/automation/</link>
+      <pubDate>Thu, 21 May 2020 08:43:54 +0100</pubDate>
+      
+      <guid>https://blog.ledigabel.com/tags/automation/</guid>
       <description></description>
     </item>
     

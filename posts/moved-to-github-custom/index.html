@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+
+    <meta name="author" content="Sebastien Le Digabel">
+    <meta name="description" content="the steps to move over to Github Pages with custom domain &#43; SSL">
+    <meta name="keywords" content="blog,sre,linux,containers,personal">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Finally switched to Github Pages custom domain"/>
+<meta name="twitter:description" content="the steps to move over to Github Pages with custom domain &#43; SSL"/>
+
+    <meta property="og:title" content="Finally switched to Github Pages custom domain" />
+<meta property="og:description" content="the steps to move over to Github Pages with custom domain &#43; SSL" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.ledigabel.com/posts/moved-to-github-custom/" />
+<meta property="article:published_time" content="2020-08-12T22:09:43+02:00" />
+<meta property="article:modified_time" content="2020-08-12T22:09:43+02:00" />
+
+
+    
+      <base href="https://blog.ledigabel.com/posts/moved-to-github-custom/">
+    
+    <title>
+  Finally switched to Github Pages custom domain · Seb&#39;s corner
+</title>
+
+    
+      <link rel="canonical" href="https://blog.ledigabel.com/posts/moved-to-github-custom/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://blog.ledigabel.com/css/coder.min.a4f332213a21ce8eb521670c614470c58923aaaf385e2a73982c31dd7642decb.css" integrity="sha256-pPMyITohzo61IWcMYURwxYkjqq84XipzmCwx3XZC3ss=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+      <link rel="stylesheet" href="https://blog.ledigabel.com/css/custom.css" />
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://blog.ledigabel.com/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://blog.ledigabel.com/images/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.71.1" />
+  </head>
+
+  
+  
+  <body class="colorscheme-light">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://blog.ledigabel.com/">
+      Seb&#39;s corner
+    </a>
+    
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://blog.ledigabel.com/posts/">Blog</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://blog.ledigabel.com/about/">About</a>
+          </li>
+        
+      
+      
+    </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">Finally switched to Github Pages custom domain</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fas fa-calendar"></i>
+              <time datetime='2020-08-12T22:09:43&#43;02:00'>
+                August 12, 2020
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fas fa-clock"></i>
+              2-minute read
+            </span>
+          </div>
+          
+          <div class="tags">
+  <i class="fas fa-tag"></i>
+    <a href="https://blog.ledigabel.com/tags/github/">github</a>
+      <span class="separator">•</span>
+    <a href="https://blog.ledigabel.com/tags/actions/">actions</a>
+      <span class="separator">•</span>
+    <a href="https://blog.ledigabel.com/tags/hugo/">hugo</a>
+      <span class="separator">•</span>
+    <a href="https://blog.ledigabel.com/tags/ssl/">ssl</a></div>
+
+        </div>
+      </header>
+
+      <div>
+        
+        <h1 id="i-finally-moved-my-website-to-github-pages-with-custom-domain-and-ssl">I finally moved my website to Github Pages with custom domain and SSL</h1>
+<h2 id="context">Context</h2>
+<p>Previously I explained how I set up <a href="https://gohugo.io">Hugo</a> to work with
+Github Actions and Github Pages.</p>
+<p>It worked out of the box with my previous repo set up for Github Pages (<a href="http://sledigabel.github.io">http://sledigabel.github.io</a>).</p>
+<p>There are several documentations on how to set it up with your custom domain. TL;DR: you have to set up a CNAME record in your custom domain name DNS manager and make it point to your github.io website.</p>
+<p>This is great, but while the github.io domain works with SSL out of the box (using Let&rsquo;s encrypt in the background to generate a certificate), it did not work with a custom domain because my repository was primarily set up for a github.io endpoint not a custom domain.
+Bottom line: the CNAME works and does its job but then the SSL certificate generated by Let&rsquo;s encrypt has no knowledge of it and your browser righly assumes the certificate is invalid for the endpoint you&rsquo;re trying to access it from.</p>
+<p>In this instance, the endpoint is (blog.ledigabel.com) and I wanted to make this work.</p>
+<h2 id="steps">Steps</h2>
+<p>I had to recreate a new repository for this specific new endpoint. The problem was the github page website was created before custom domains were a thing, and so it was upgraded using custom domain with the CNAME trick rather than properly setup.</p>
+<p>I mainly followed the steps <a href="https://github.blog/2018-05-01-github-pages-custom-domains-https/">here</a>.
+I also found <a href="https://varunpatil.me/blog/posts/https-with-github-pages-custom-domain/">this article</a> very useful, more of a step-by-step walkthrough.</p>
+<p>I&rsquo;ll basically write a quick summary of the steps I took:</p>
+<ol>
+<li>Create a new repository <code>blog.ledigabel.com</code></li>
+<li>Generate a static website with <code>Hugo</code> and copy the files over to the new repository.</li>
+<li>Add a <code>CNAME</code> file with content: &ldquo;blog.ledigabel.com&rdquo;</li>
+<li>In <em>Settings</em>, Add a custom domain name under &ldquo;Github pages&rdquo; and tick &ldquo;Enforce HTTPS&rdquo;.
+<img src="https://blog.ledigabel.com/images/Github_custom_domain_https.png" alt="Github settings"></li>
+<li>Update the master hugo repository (containing the templated files), remove the old submodule with the new one</li>
+<li>Update Github Actions to update the new repository</li>
+</ol>
+<h2 id="conclusion">Conclusion</h2>
+<p>The word that comes to my mind is easy peasy. I was under the impression that, as it used to be the case, only repositories called <code>*.github.io</code> could be used as Github Pages, but virtually any one would do. I&rsquo;m considering doing the same thing for my static about page now. Any repository can now be used to work as a static website. I can now see why people are using this all the time.</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+      </footer>
+    </article>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js" id="MathJax-script"></script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ['$', '$'], ['\\(', '\\)']
+        ],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  </section>
+
+      </div>
+
+      
+  <footer class="footer">
+    <section class="container">
+      
+        <p>Frenchman living in London<br>Fan of tech, automation, and open source</p>
+      
+      
+        ©
+        
+        2020
+         Sebastien Le Digabel 
+      
+      
+         · 
+        Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+      
+      
+    </section>
+  </footer>
+
+    </main>
+
+    
+
+    
+
+    
+
+  </body>
+
+</html>
