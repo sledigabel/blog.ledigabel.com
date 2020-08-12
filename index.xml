@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Seb&#39;s corner</title>
-    <link>https://sledigabel.github.io/</link>
+    <link>https://blog.ledigabel.com/</link>
     <description>Recent content on Seb&#39;s corner</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 21 May 2020 08:43:54 +0100</lastBuildDate>
     
-	<atom:link href="https://sledigabel.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.ledigabel.com/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Set up Hugo and Github actions</title>
-      <link>https://sledigabel.github.io/posts/hugo-and-github-actions/</link>
+      <link>https://blog.ledigabel.com/posts/hugo-and-github-actions/</link>
       <pubDate>Thu, 21 May 2020 08:43:54 +0100</pubDate>
       
-      <guid>https://sledigabel.github.io/posts/hugo-and-github-actions/</guid>
+      <guid>https://blog.ledigabel.com/posts/hugo-and-github-actions/</guid>
       <description>&lt;h1 id=&#34;tldr&#34;&gt;TL;DR&lt;/h1&gt;
 &lt;p&gt;Hugo is a powerful static blog generator, Github pages can host a static website from a github repository, Github actions can trigger automation based on commits. It is like those three things were made to come together.&lt;/p&gt;
 &lt;h1 id=&#34;hugo&#34;&gt;Hugo&lt;/h1&gt;
@@ -83,13 +83,13 @@ It&amp;rsquo;s got a free tier, providing you run your automation on linux and y
     
     <item>
       <title>Experimenting with Helm Operator with minikube</title>
-      <link>https://sledigabel.github.io/posts/helm-operator/</link>
+      <link>https://blog.ledigabel.com/posts/helm-operator/</link>
       <pubDate>Sat, 25 Apr 2020 13:36:22 +0100</pubDate>
       
-      <guid>https://sledigabel.github.io/posts/helm-operator/</guid>
+      <guid>https://blog.ledigabel.com/posts/helm-operator/</guid>
       <description>&lt;h1 id=&#34;experimenting-with-helm-operator-with-minikube&#34;&gt;Experimenting with Helm Operator with minikube&lt;/h1&gt;
 &lt;figure&gt;&lt;a href=&#34;https://helm.sh&#34;&gt;
-    &lt;img src=&#34;https://sledigabel.github.io/images/helm.svg&#34; width=&#34;10%&#34;/&gt; &lt;/a&gt;
+    &lt;img src=&#34;https://blog.ledigabel.com/images/helm.svg&#34; width=&#34;10%&#34;/&gt; &lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;h2 id=&#34;helm&#34;&gt;Helm&lt;/h2&gt;
@@ -370,10 +370,10 @@ An interesting thing is that you &lt;em&gt;can&lt;/em&gt; view the state of your
     
     <item>
       <title>My first post!</title>
-      <link>https://sledigabel.github.io/posts/my-first-post/</link>
+      <link>https://blog.ledigabel.com/posts/my-first-post/</link>
       <pubDate>Wed, 09 Oct 2019 11:33:46 +0100</pubDate>
       
-      <guid>https://sledigabel.github.io/posts/my-first-post/</guid>
+      <guid>https://blog.ledigabel.com/posts/my-first-post/</guid>
       <description>&lt;h1 id=&#34;new-post-new-site-new-life&#34;&gt;New post, new site, new life&lt;/h1&gt;
 &lt;p&gt;Hello readers :-) welcome to my blog.&lt;/p&gt;
 &lt;p&gt;Got some time to try out &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; and actually start a blog.

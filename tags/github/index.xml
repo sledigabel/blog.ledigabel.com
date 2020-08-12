@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>github on Seb&#39;s corner</title>
-    <link>https://sledigabel.github.io/tags/github/</link>
+    <link>https://blog.ledigabel.com/tags/github/</link>
     <description>Recent content in github on Seb&#39;s corner</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 21 May 2020 08:43:54 +0100</lastBuildDate>
     
-	<atom:link href="https://sledigabel.github.io/tags/github/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.ledigabel.com/tags/github/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Set up Hugo and Github actions</title>
-      <link>https://sledigabel.github.io/posts/hugo-and-github-actions/</link>
+      <link>https://blog.ledigabel.com/posts/hugo-and-github-actions/</link>
       <pubDate>Thu, 21 May 2020 08:43:54 +0100</pubDate>
       
-      <guid>https://sledigabel.github.io/posts/hugo-and-github-actions/</guid>
+      <guid>https://blog.ledigabel.com/posts/hugo-and-github-actions/</guid>
       <description>&lt;h1 id=&#34;tldr&#34;&gt;TL;DR&lt;/h1&gt;
 &lt;p&gt;Hugo is a powerful static blog generator, Github pages can host a static website from a github repository, Github actions can trigger automation based on commits. It is like those three things were made to come together.&lt;/p&gt;
 &lt;h1 id=&#34;hugo&#34;&gt;Hugo&lt;/h1&gt;

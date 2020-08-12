@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>helm on Seb&#39;s corner</title>
-    <link>https://sledigabel.github.io/tags/helm/</link>
+    <link>https://blog.ledigabel.com/tags/helm/</link>
     <description>Recent content in helm on Seb&#39;s corner</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sat, 25 Apr 2020 13:36:22 +0100</lastBuildDate>
     
-	<atom:link href="https://sledigabel.github.io/tags/helm/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.ledigabel.com/tags/helm/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Experimenting with Helm Operator with minikube</title>
-      <link>https://sledigabel.github.io/posts/helm-operator/</link>
+      <link>https://blog.ledigabel.com/posts/helm-operator/</link>
       <pubDate>Sat, 25 Apr 2020 13:36:22 +0100</pubDate>
       
-      <guid>https://sledigabel.github.io/posts/helm-operator/</guid>
+      <guid>https://blog.ledigabel.com/posts/helm-operator/</guid>
       <description>&lt;h1 id=&#34;experimenting-with-helm-operator-with-minikube&#34;&gt;Experimenting with Helm Operator with minikube&lt;/h1&gt;
 &lt;figure&gt;&lt;a href=&#34;https://helm.sh&#34;&gt;
-    &lt;img src=&#34;https://sledigabel.github.io/images/helm.svg&#34; width=&#34;10%&#34;/&gt; &lt;/a&gt;
+    &lt;img src=&#34;https://blog.ledigabel.com/images/helm.svg&#34; width=&#34;10%&#34;/&gt; &lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;h2 id=&#34;helm&#34;&gt;Helm&lt;/h2&gt;
