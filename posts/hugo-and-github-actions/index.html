@@ -202,6 +202,18 @@ sources one. The reason behind this is to make it easy to automate it from githu
 <p>It makes it pretty easy to tie in Hugo sources changes with the website rendering
 and the theme used during the website production.</p>
 <h2 id="github-action-1">GitHub action</h2>
+<p>The Github action is triggering on push and follows a relatively straightforward
+path, that is:</p>
+<ol>
+<li>Checkout, + submodules</li>
+<li>Remove the old generated static website</li>
+<li>Generate the new website</li>
+<li>Push new website content</li>
+<li>Update new website revision on master repo</li>
+</ol>
+<p>You can find the gist of it here:
+<script type="application/javascript" src="https://gist.github.com/sledigabel/ecacbdddedad31fc7a8a39690c4828e4.js"></script>
+</p>
 
       </div>
 
