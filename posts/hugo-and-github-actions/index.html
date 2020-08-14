@@ -7,15 +7,15 @@
     <meta http-equiv="Content-Language" content="en">
 
     <meta name="author" content="Sebastien Le Digabel">
-    <meta name="description" content="A union made in heaven">
+    <meta name="description" content="A match made in heaven">
     <meta name="keywords" content="blog,sre,linux,containers,personal">
 
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Set up Hugo and Github actions"/>
-<meta name="twitter:description" content="A union made in heaven"/>
+<meta name="twitter:description" content="A match made in heaven"/>
 
     <meta property="og:title" content="Set up Hugo and Github actions" />
-<meta property="og:description" content="A union made in heaven" />
+<meta property="og:description" content="A match made in heaven" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.ledigabel.com/posts/hugo-and-github-actions/" />
 <meta property="article:published_time" content="2020-05-21T08:43:54+01:00" />
@@ -108,7 +108,7 @@
             </span>
             <span class="reading-time">
               <i class="fas fa-clock"></i>
-              2-minute read
+              3-minute read
             </span>
           </div>
           <div class="categories">
@@ -189,6 +189,19 @@ It&rsquo;s got a free tier, providing you run your automation on linux and you&r
 <li>Integration with the github UI, get quick feedback on commits, push or PRs.</li>
 </ul>
 <h1 id="set-up">Set up</h1>
+<h2 id="git">Git</h2>
+<p>The various repositories used in this setup are listed as follow:</p>
+<ol>
+<li>A repository containing the hugo sources.</li>
+<li>A repository cloned from upstream as a hugo theme</li>
+<li>A repository containing the static website (Github pages)</li>
+</ol>
+<p>Both theme and website repositories are set up as submodules from the main hugo
+sources one. The reason behind this is to make it easy to automate it from github action that is very single repository centric.</p>
+<p><img src="https://blog.ledigabel.com/images/hugo-git-repos.png" alt="Hugo repositories setup"></p>
+<p>It makes it pretty easy to tie in Hugo sources changes with the website rendering
+and the theme used during the website production.</p>
+<h2 id="github-action-1">GitHub action</h2>
 
       </div>
 

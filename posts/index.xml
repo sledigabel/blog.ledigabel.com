@@ -112,6 +112,19 @@ It&amp;rsquo;s got a free tier, providing you run your automation on linux and y
 &lt;li&gt;Integration with the github UI, get quick feedback on commits, push or PRs.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;set-up&#34;&gt;Set up&lt;/h1&gt;
+&lt;h2 id=&#34;git&#34;&gt;Git&lt;/h2&gt;
+&lt;p&gt;The various repositories used in this setup are listed as follow:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;A repository containing the hugo sources.&lt;/li&gt;
+&lt;li&gt;A repository cloned from upstream as a hugo theme&lt;/li&gt;
+&lt;li&gt;A repository containing the static website (Github pages)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Both theme and website repositories are set up as submodules from the main hugo
+sources one. The reason behind this is to make it easy to automate it from github action that is very single repository centric.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.ledigabel.com/images/hugo-git-repos.png&#34; alt=&#34;Hugo repositories setup&#34;&gt;&lt;/p&gt;
+&lt;p&gt;It makes it pretty easy to tie in Hugo sources changes with the website rendering
+and the theme used during the website production.&lt;/p&gt;
+&lt;h2 id=&#34;github-action-1&#34;&gt;GitHub action&lt;/h2&gt;
 </description>
     </item>
     
