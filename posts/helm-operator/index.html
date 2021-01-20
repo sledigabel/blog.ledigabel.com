@@ -56,7 +56,7 @@
     <link rel="icon" type="image/png" href="https://blog.ledigabel.com/images/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://blog.ledigabel.com/images/favicon-16x16.png" sizes="16x16">
 
-    <meta name="generator" content="Hugo 0.71.1" />
+    <meta name="generator" content="Hugo 0.79.1" />
   </head>
 
   
@@ -198,20 +198,20 @@ No resources found.</code></pre></div>
 <h2 id="installing-prometheus">Installing Prometheus</h2>
 <p>Now let&rsquo;s move to the fun bit; Let&rsquo;s deploy something.
 We could deploy Prometheus for instance.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">apiVersion</span>: helm.fluxcd.io/v1
-<span style="color:#66d9ef">kind</span>: HelmRelease
-<span style="color:#66d9ef">metadata</span>:
-  <span style="color:#66d9ef">name</span>: prometheus
-  <span style="color:#66d9ef">namespace</span>: default
-<span style="color:#66d9ef">spec</span>:
-  <span style="color:#66d9ef">releaseName</span>: prometheus
-  <span style="color:#66d9ef">chart</span>:
-    <span style="color:#66d9ef">name</span>: prometheus
-    <span style="color:#66d9ef">repository</span>: https://kubernetes-charts.storage.googleapis.com
-    <span style="color:#66d9ef">version</span>: <span style="color:#ae81ff">10.4.0</span>
-  <span style="color:#66d9ef">values</span>:
-    <span style="color:#66d9ef">service</span>:
-      <span style="color:#66d9ef">type</span>: NodePort</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">helm.fluxcd.io/v1</span>
+<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">HelmRelease</span>
+<span style="color:#f92672">metadata</span>:
+  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">prometheus</span>
+  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">default</span>
+<span style="color:#f92672">spec</span>:
+  <span style="color:#f92672">releaseName</span>: <span style="color:#ae81ff">prometheus</span>
+  <span style="color:#f92672">chart</span>:
+    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">prometheus</span>
+    <span style="color:#f92672">repository</span>: <span style="color:#ae81ff">https://kubernetes-charts.storage.googleapis.com</span>
+    <span style="color:#f92672">version</span>: <span style="color:#ae81ff">10.4.0</span>
+  <span style="color:#f92672">values</span>:
+    <span style="color:#f92672">service</span>:
+      <span style="color:#f92672">type</span>: <span style="color:#ae81ff">NodePort</span></code></pre></div>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cat <span style="color:#e6db74">&lt;&lt;EOF | kubectl apply -f -
 </span><span style="color:#e6db74">apiVersion: helm.fluxcd.io/v1
 </span><span style="color:#e6db74">[...]
@@ -295,23 +295,23 @@ The feedback you get is:</p>
 }</code></pre></div>
 <h2 id="installing-chartmuseum">Installing Chartmuseum</h2>
 <p>For the next bit we&rsquo;ll install <a href="https://chartmuseum.com/">Chart Museum</a>. It&rsquo;s an open source repository for Helm Charts. N.T.D.L.: it&rsquo;s important for the Helm Operator to have direct access to the Chart Museum for future use; that&rsquo;s why we&rsquo;re colocating it in the same namespace in this example;</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">apiVersion</span>: helm.fluxcd.io/v1
-<span style="color:#66d9ef">kind</span>: HelmRelease
-<span style="color:#66d9ef">metadata</span>:
-  <span style="color:#66d9ef">name</span>: chartmuseum
-  <span style="color:#66d9ef">namespace</span>: flux
-<span style="color:#66d9ef">spec</span>:
-  <span style="color:#66d9ef">releaseName</span>: chartmuseum
-  <span style="color:#66d9ef">chart</span>:
-    <span style="color:#66d9ef">name</span>: chartmuseum
-    <span style="color:#66d9ef">repository</span>: https://kubernetes-charts.storage.googleapis.com
-    <span style="color:#66d9ef">version</span>: <span style="color:#ae81ff">2.12.0</span>
-  <span style="color:#66d9ef">values</span>:
-    <span style="color:#66d9ef">service</span>:
-      <span style="color:#66d9ef">type</span>: NodePort
-    <span style="color:#66d9ef">env</span>:
-      <span style="color:#66d9ef">open</span>:
-        <span style="color:#66d9ef">DISABLE_API</span>: <span style="color:#66d9ef">false</span></code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">helm.fluxcd.io/v1</span>
+<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">HelmRelease</span>
+<span style="color:#f92672">metadata</span>:
+  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">chartmuseum</span>
+  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">flux</span>
+<span style="color:#f92672">spec</span>:
+  <span style="color:#f92672">releaseName</span>: <span style="color:#ae81ff">chartmuseum</span>
+  <span style="color:#f92672">chart</span>:
+    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">chartmuseum</span>
+    <span style="color:#f92672">repository</span>: <span style="color:#ae81ff">https://kubernetes-charts.storage.googleapis.com</span>
+    <span style="color:#f92672">version</span>: <span style="color:#ae81ff">2.12.0</span>
+  <span style="color:#f92672">values</span>:
+    <span style="color:#f92672">service</span>:
+      <span style="color:#f92672">type</span>: <span style="color:#ae81ff">NodePort</span>
+    <span style="color:#f92672">env</span>:
+      <span style="color:#f92672">open</span>:
+        <span style="color:#f92672">DISABLE_API</span>: <span style="color:#66d9ef">false</span></code></pre></div>
 <p>Pushing this CRD to Kubernetes Helm Operator would give us:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ curl <span style="color:#e6db74">`</span>minikube service chartmuseum-chartmuseum --url<span style="color:#e6db74">`</span>
 &lt;!DOCTYPE html&gt;
@@ -358,17 +358,17 @@ Successfully packaged chart and saved it to: /Users/sebastienledigabel/dev/temp/
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ curl -XPOST --data-binary <span style="color:#e6db74">&#34;@app3tierpython-0.1.2.tgz&#34;</span> <span style="color:#66d9ef">$(</span>minikube service chartmuseum-chartmuseum --url<span style="color:#66d9ef">)</span>/api/charts
 <span style="color:#f92672">{</span><span style="color:#e6db74">&#34;saved&#34;</span>:true<span style="color:#f92672">}</span></code></pre></div>
 <p>Now we can deploy the app3tierpython hosted on the chart museum.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">apiVersion</span>: helm.fluxcd.io/v1
-<span style="color:#66d9ef">kind</span>: HelmRelease
-<span style="color:#66d9ef">metadata</span>:
-  <span style="color:#66d9ef">name</span>: app3tierpython 
-  <span style="color:#66d9ef">namespace</span>: default
-<span style="color:#66d9ef">spec</span>:
-  <span style="color:#66d9ef">releaseName</span>: app3tierpython
-  <span style="color:#66d9ef">chart</span>:
-    <span style="color:#66d9ef">name</span>: app3tierpython
-    <span style="color:#66d9ef">repository</span>: http://chartmuseum-chartmuseum:<span style="color:#ae81ff">8080</span>
-    <span style="color:#66d9ef">version</span>: <span style="color:#ae81ff">0.1.2</span></code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">helm.fluxcd.io/v1</span>
+<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">HelmRelease</span>
+<span style="color:#f92672">metadata</span>:
+  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">app3tierpython </span>
+  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">default</span>
+<span style="color:#f92672">spec</span>:
+  <span style="color:#f92672">releaseName</span>: <span style="color:#ae81ff">app3tierpython</span>
+  <span style="color:#f92672">chart</span>:
+    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">app3tierpython</span>
+    <span style="color:#f92672">repository</span>: <span style="color:#ae81ff">http://chartmuseum-chartmuseum:8080</span>
+    <span style="color:#f92672">version</span>: <span style="color:#ae81ff">0.1.2</span></code></pre></div>
 <p>What does Helm Operator say?</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl describe hr app3tierpython
 Name:         app3tierpython

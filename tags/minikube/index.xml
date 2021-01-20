@@ -87,20 +87,20 @@ No resources found.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id=&#34;installing-prometheus&#34;&gt;Installing Prometheus&lt;/h2&gt;
 &lt;p&gt;Now let&amp;rsquo;s move to the fun bit; Let&amp;rsquo;s deploy something.
 We could deploy Prometheus for instance.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;apiVersion&lt;/span&gt;: helm.fluxcd.io/v1
-&lt;span style=&#34;color:#66d9ef&#34;&gt;kind&lt;/span&gt;: HelmRelease
-&lt;span style=&#34;color:#66d9ef&#34;&gt;metadata&lt;/span&gt;:
-  &lt;span style=&#34;color:#66d9ef&#34;&gt;name&lt;/span&gt;: prometheus
-  &lt;span style=&#34;color:#66d9ef&#34;&gt;namespace&lt;/span&gt;: default
-&lt;span style=&#34;color:#66d9ef&#34;&gt;spec&lt;/span&gt;:
-  &lt;span style=&#34;color:#66d9ef&#34;&gt;releaseName&lt;/span&gt;: prometheus
-  &lt;span style=&#34;color:#66d9ef&#34;&gt;chart&lt;/span&gt;:
-    &lt;span style=&#34;color:#66d9ef&#34;&gt;name&lt;/span&gt;: prometheus
-    &lt;span style=&#34;color:#66d9ef&#34;&gt;repository&lt;/span&gt;: https://kubernetes-charts.storage.googleapis.com
-    &lt;span style=&#34;color:#66d9ef&#34;&gt;version&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;10.4.0&lt;/span&gt;
-  &lt;span style=&#34;color:#66d9ef&#34;&gt;values&lt;/span&gt;:
-    &lt;span style=&#34;color:#66d9ef&#34;&gt;service&lt;/span&gt;:
-      &lt;span style=&#34;color:#66d9ef&#34;&gt;type&lt;/span&gt;: NodePort&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;apiVersion&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;helm.fluxcd.io/v1&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;kind&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;HelmRelease&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;metadata&lt;/span&gt;:
+  &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;prometheus&lt;/span&gt;
+  &lt;span style=&#34;color:#f92672&#34;&gt;namespace&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;default&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;spec&lt;/span&gt;:
+  &lt;span style=&#34;color:#f92672&#34;&gt;releaseName&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;prometheus&lt;/span&gt;
+  &lt;span style=&#34;color:#f92672&#34;&gt;chart&lt;/span&gt;:
+    &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;prometheus&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;repository&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;https://kubernetes-charts.storage.googleapis.com&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;version&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;10.4.0&lt;/span&gt;
+  &lt;span style=&#34;color:#f92672&#34;&gt;values&lt;/span&gt;:
+    &lt;span style=&#34;color:#f92672&#34;&gt;service&lt;/span&gt;:
+      &lt;span style=&#34;color:#f92672&#34;&gt;type&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;NodePort&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ cat &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;lt;&amp;lt;EOF | kubectl apply -f -
 &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;apiVersion: helm.fluxcd.io/v1
 &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;[...]
@@ -184,23 +184,23 @@ The feedback you get is:&lt;/p&gt;
 }&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id=&#34;installing-chartmuseum&#34;&gt;Installing Chartmuseum&lt;/h2&gt;
 &lt;p&gt;For the next bit we&amp;rsquo;ll install &lt;a href=&#34;https://chartmuseum.com/&#34;&gt;Chart Museum&lt;/a&gt;. It&amp;rsquo;s an open source repository for Helm Charts. N.T.D.L.: it&amp;rsquo;s important for the Helm Operator to have direct access to the Chart Museum for future use; that&amp;rsquo;s why we&amp;rsquo;re colocating it in the same namespace in this example;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;apiVersion&lt;/span&gt;: helm.fluxcd.io/v1
-&lt;span style=&#34;color:#66d9ef&#34;&gt;kind&lt;/span&gt;: HelmRelease
-&lt;span style=&#34;color:#66d9ef&#34;&gt;metadata&lt;/span&gt;:
-  &lt;span style=&#34;color:#66d9ef&#34;&gt;name&lt;/span&gt;: chartmuseum
-  &lt;span style=&#34;color:#66d9ef&#34;&gt;namespace&lt;/span&gt;: flux
-&lt;span style=&#34;color:#66d9ef&#34;&gt;spec&lt;/span&gt;:
-  &lt;span style=&#34;color:#66d9ef&#34;&gt;releaseName&lt;/span&gt;: chartmuseum
-  &lt;span style=&#34;color:#66d9ef&#34;&gt;chart&lt;/span&gt;:
-    &lt;span style=&#34;color:#66d9ef&#34;&gt;name&lt;/span&gt;: chartmuseum
-    &lt;span style=&#34;color:#66d9ef&#34;&gt;repository&lt;/span&gt;: https://kubernetes-charts.storage.googleapis.com
-    &lt;span style=&#34;color:#66d9ef&#34;&gt;version&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;2.12.0&lt;/span&gt;
-  &lt;span style=&#34;color:#66d9ef&#34;&gt;values&lt;/span&gt;:
-    &lt;span style=&#34;color:#66d9ef&#34;&gt;service&lt;/span&gt;:
-      &lt;span style=&#34;color:#66d9ef&#34;&gt;type&lt;/span&gt;: NodePort
-    &lt;span style=&#34;color:#66d9ef&#34;&gt;env&lt;/span&gt;:
-      &lt;span style=&#34;color:#66d9ef&#34;&gt;open&lt;/span&gt;:
-        &lt;span style=&#34;color:#66d9ef&#34;&gt;DISABLE_API&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;apiVersion&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;helm.fluxcd.io/v1&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;kind&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;HelmRelease&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;metadata&lt;/span&gt;:
+  &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;chartmuseum&lt;/span&gt;
+  &lt;span style=&#34;color:#f92672&#34;&gt;namespace&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;flux&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;spec&lt;/span&gt;:
+  &lt;span style=&#34;color:#f92672&#34;&gt;releaseName&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;chartmuseum&lt;/span&gt;
+  &lt;span style=&#34;color:#f92672&#34;&gt;chart&lt;/span&gt;:
+    &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;chartmuseum&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;repository&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;https://kubernetes-charts.storage.googleapis.com&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;version&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;2.12.0&lt;/span&gt;
+  &lt;span style=&#34;color:#f92672&#34;&gt;values&lt;/span&gt;:
+    &lt;span style=&#34;color:#f92672&#34;&gt;service&lt;/span&gt;:
+      &lt;span style=&#34;color:#f92672&#34;&gt;type&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;NodePort&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;env&lt;/span&gt;:
+      &lt;span style=&#34;color:#f92672&#34;&gt;open&lt;/span&gt;:
+        &lt;span style=&#34;color:#f92672&#34;&gt;DISABLE_API&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Pushing this CRD to Kubernetes Helm Operator would give us:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ curl &lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;minikube service chartmuseum-chartmuseum --url&lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;
 &amp;lt;!DOCTYPE html&amp;gt;
@@ -247,17 +247,17 @@ Successfully packaged chart and saved it to: /Users/sebastienledigabel/dev/temp/
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ curl -XPOST --data-binary &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;@app3tierpython-0.1.2.tgz&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;minikube service chartmuseum-chartmuseum --url&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;/api/charts
 &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;saved&amp;#34;&lt;/span&gt;:true&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Now we can deploy the app3tierpython hosted on the chart museum.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;apiVersion&lt;/span&gt;: helm.fluxcd.io/v1
-&lt;span style=&#34;color:#66d9ef&#34;&gt;kind&lt;/span&gt;: HelmRelease
-&lt;span style=&#34;color:#66d9ef&#34;&gt;metadata&lt;/span&gt;:
-  &lt;span style=&#34;color:#66d9ef&#34;&gt;name&lt;/span&gt;: app3tierpython 
-  &lt;span style=&#34;color:#66d9ef&#34;&gt;namespace&lt;/span&gt;: default
-&lt;span style=&#34;color:#66d9ef&#34;&gt;spec&lt;/span&gt;:
-  &lt;span style=&#34;color:#66d9ef&#34;&gt;releaseName&lt;/span&gt;: app3tierpython
-  &lt;span style=&#34;color:#66d9ef&#34;&gt;chart&lt;/span&gt;:
-    &lt;span style=&#34;color:#66d9ef&#34;&gt;name&lt;/span&gt;: app3tierpython
-    &lt;span style=&#34;color:#66d9ef&#34;&gt;repository&lt;/span&gt;: http://chartmuseum-chartmuseum:&lt;span style=&#34;color:#ae81ff&#34;&gt;8080&lt;/span&gt;
-    &lt;span style=&#34;color:#66d9ef&#34;&gt;version&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;0.1.2&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;apiVersion&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;helm.fluxcd.io/v1&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;kind&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;HelmRelease&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;metadata&lt;/span&gt;:
+  &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;app3tierpython &lt;/span&gt;
+  &lt;span style=&#34;color:#f92672&#34;&gt;namespace&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;default&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;spec&lt;/span&gt;:
+  &lt;span style=&#34;color:#f92672&#34;&gt;releaseName&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;app3tierpython&lt;/span&gt;
+  &lt;span style=&#34;color:#f92672&#34;&gt;chart&lt;/span&gt;:
+    &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;app3tierpython&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;repository&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;http://chartmuseum-chartmuseum:8080&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;version&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;0.1.2&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;What does Helm Operator say?&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ kubectl describe hr app3tierpython
 Name:         app3tierpython
