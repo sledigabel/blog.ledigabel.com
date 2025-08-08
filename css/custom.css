@@ -176,6 +176,19 @@ body.colorscheme-light .content article p:last-of-type::after {
   50% { opacity: 0; }
 }
 
+/* Typing cursor animation */
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.typing-cursor {
+  display: inline-block;
+  font-weight: normal;
+  margin-left: 2px;
+  animation: cursor-blink 1s step-end infinite;
+}
+
 /* Improved code syntax highlighting for dark mode */
 body.colorscheme-dark .highlight pre {
   background-color: #000 !important;
