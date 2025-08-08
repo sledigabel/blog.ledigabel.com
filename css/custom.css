@@ -1,0 +1,217 @@
+/* Pre-render dark mode variables to prevent flash */
+:root {
+  --light-body-bg: #fff;
+  --light-fg-color: #212121;
+  --light-content-bg: #fff;
+  --light-header-color: #000;
+  --light-link-color: #1565c0;
+  --light-link-hover-color: #1976d2;
+  --light-border-color: #f0f0f0;
+}
+
+html.dark-theme {
+  --body-bg: #0f0f0f;
+  --fg-color: #33ff33;
+  --content-bg: #161616;
+  --header-color: #4aff4a;
+  --link-color: #00cc00;
+  --link-hover-color: #66ff66;
+  --border-color: #333333;
+}
+
+/* Light mode explicit styling */
+body.colorscheme-light {
+  --body-bg: #fff;
+  --fg-color: #212121;
+  --content-bg: #fff;
+  --header-color: #000;
+  --link-color: #1565c0;
+  --link-hover-color: #1976d2;
+  --border-color: #f0f0f0;
+  
+  background-color: var(--body-bg) !important;
+  color: var(--fg-color) !important;
+  font-family: 'Lato', sans-serif;
+}
+
+/* Make sure content area gets proper background in light mode */
+body.colorscheme-light .content {
+  background-color: var(--content-bg) !important;
+}
+
+/* Custom CSS for dark mode */
+body.colorscheme-dark {
+  --body-bg: #0f0f0f;
+  --fg-color: #33ff33;  /* Classic terminal green */
+  --content-bg: #161616;
+  --header-color: #4aff4a;  /* Slightly brighter green for headers */
+  --link-color: #00cc00;  /* Darker green for links */
+  --link-hover-color: #66ff66;  /* Lighter green for link hover */
+  --border-color: #333333;
+  
+  /* Apply terminal-like styling for the entire dark mode */
+  font-family: 'Source Code Pro', monospace;
+  color: var(--fg-color) !important;
+  background-color: var(--body-bg) !important;
+}
+
+/* Prevent flash of light content */
+html.dark-theme body {
+  background-color: #0f0f0f !important;
+}
+
+/* Light theme explicit override */
+html:not(.dark-theme) body {
+  background-color: #fff !important;
+}
+
+/* Override background for dark mode */
+body.colorscheme-dark .content {
+  background-color: var(--content-bg) !important;
+}
+
+body.colorscheme-dark .navigation {
+  background-color: var(--body-bg) !important;
+  border-bottom: 1px solid #1e1e1e;
+}
+
+body.colorscheme-dark .navigation a {
+  color: var(--header-color);
+}
+
+body.colorscheme-dark .footer {
+  background-color: var(--body-bg) !important;
+  border-top: 1px solid #1e1e1e;
+  color: var(--fg-color);
+}
+
+/* Light mode navigation and footer overrides */
+body.colorscheme-light .navigation {
+  background-color: var(--body-bg) !important;
+  border-bottom: 1px solid #eee;
+}
+
+body.colorscheme-light .footer {
+  background-color: var(--body-bg) !important;
+  border-top: 1px solid #eee;
+  color: var(--fg-color);
+}
+
+/* Add a subtle CRT effect */
+body.colorscheme-dark {
+  text-shadow: 0 0 5px rgba(51, 255, 51, 0.3);
+}
+
+/* Remove text shadow in light mode */
+body.colorscheme-light {
+  text-shadow: none !important;
+}
+
+/* Make headers stand out in terminal style */
+body.colorscheme-dark h1, 
+body.colorscheme-dark h2, 
+body.colorscheme-dark h3, 
+body.colorscheme-dark h4 {
+  color: var(--header-color);
+}
+
+/* Custom styles for both light and dark mode */
+.content article p {
+  line-height: 1.7;
+}
+
+pre, code {
+  border-radius: 4px;
+}
+
+/* Style code blocks to look like terminal windows in dark mode */
+body.colorscheme-dark pre {
+  background-color: #000 !important;
+  border: 1px solid #333;
+  box-shadow: 0 0 10px rgba(51, 255, 51, 0.1);
+}
+
+body.colorscheme-dark code {
+  color: #33ff33;
+}
+
+/* Dark mode toggle styles */
+.dark-mode-toggle {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--body-bg);
+  border: 2px solid var(--fg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 999;
+  transition: all 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(51, 255, 51, 0.5);
+}
+
+/* Terminal cursor effect for dark mode */
+body.colorscheme-dark .content article p:last-of-type::after {
+  content: '█';
+  animation: blink 1s step-end infinite;
+  font-weight: normal;
+  color: var(--fg-color);
+}
+
+/* Remove cursor in light mode */
+body.colorscheme-light .content article p:last-of-type::after {
+  content: none !important;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Improved code syntax highlighting for dark mode */
+body.colorscheme-dark .highlight pre {
+  background-color: #000 !important;
+}
+
+body.colorscheme-dark .highlight .c {
+  color: #009900;
+} /* Comment */
+body.colorscheme-dark .highlight .k {
+  color: #00ff00;
+} /* Keyword */
+body.colorscheme-dark .highlight .s {
+  color: #99ff99;
+} /* String */
+body.colorscheme-dark .highlight .n {
+  color: #33ff33;
+} /* Name */
+
+/* Adjust link styles in dark mode for better contrast */
+body.colorscheme-dark a {
+  color: var(--link-color);
+  text-decoration: underline;
+}
+
+body.colorscheme-dark a:hover {
+  color: var(--link-hover-color);
+  text-decoration: none;
+}
+
+/* Link styles for light mode */
+body.colorscheme-light a {
+  color: var(--link-color);
+  text-decoration: underline;
+}
+
+body.colorscheme-light a:hover {
+  color: var(--link-hover-color);
+  text-decoration: none;
+}

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>tech on Seb&#39;s corner</title>
+    <title>Tech on Seb&#39;s corner</title>
     <link>https://blog.ledigabel.com/categories/tech/</link>
-    <description>Recent content in tech on Seb&#39;s corner</description>
+    <description>Recent content in Tech on Seb&#39;s corner</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 21 May 2020 08:43:54 +0100</lastBuildDate>
@@ -27,30 +27,30 @@ It has great features, great themes and a large community, so when I was looking
 &lt;ol&gt;
 &lt;li&gt;Initialise your Hugo site and create a new repository for your blog&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;hugo new site MySite
-cd MySite
-git init
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hugo new site MySite
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd MySite
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git init
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;Install a theme&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now two things:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now two things:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;the theme is recommended to be installed as a submodule.&lt;/li&gt;
 &lt;li&gt;I &lt;em&gt;personally&lt;/em&gt; cloned the theme to allow personal tweaks but also to track changes separately from the upstream repo.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;You can find my cloned theme &lt;a href=&#34;https://github.com/sledigabel/hugo-coder&#34;&gt;here&lt;/a&gt;. It&amp;rsquo;s a clone from &lt;a href=&#34;https://github.com/luizdepra/hugo-coder,&#34;&gt;https://github.com/luizdepra/hugo-coder,&lt;/a&gt; which I think looks amazing.&lt;/p&gt;
+&lt;p&gt;You can find my cloned theme &lt;a href=&#34;https://github.com/sledigabel/hugo-coder&#34;&gt;here&lt;/a&gt;. It&amp;rsquo;s a clone from &lt;a href=&#34;https://github.com/luizdepra/hugo-coder&#34;&gt;https://github.com/luizdepra/hugo-coder&lt;/a&gt;, which I think looks amazing.&lt;/p&gt;
 &lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;Add content and render your website&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;hugo new posts/my-first-post.md
-&lt;span style=&#34;color:#75715e&#34;&gt;# edit the content/posts/my-first-post.md&lt;/span&gt;
-hugo server -D &lt;span style=&#34;color:#75715e&#34;&gt;# will run a local website and continuously refresh the content&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;4&#34;&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hugo new posts/my-first-post.md
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# edit the content/posts/my-first-post.md&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hugo server -D &lt;span style=&#34;color:#75715e&#34;&gt;# will run a local website and continuously refresh the content&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;4&#34;&gt;
 &lt;li&gt;Generate your static website.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;hugo -D &lt;span style=&#34;color:#75715e&#34;&gt;# all content is created in ./public/&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;5&#34;&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hugo -D &lt;span style=&#34;color:#75715e&#34;&gt;# all content is created in ./public/&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;5&#34;&gt;
 &lt;li&gt;Now what?&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;You&amp;rsquo;re meant to take all files in the public directory and copy it into your web server, ready to serve requests.
@@ -101,7 +101,7 @@ path, that is:&lt;/p&gt;
 &lt;li&gt;Update new website revision on master repo&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;You can find the gist of it here:
-&lt;script type=&#34;application/javascript&#34; src=&#34;https://gist.github.com/sledigabel/ecacbdddedad31fc7a8a39690c4828e4.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://gist.github.com/sledigabel/ecacbdddedad31fc7a8a39690c4828e4.js&#34;&gt;&lt;/script&gt;
 &lt;/p&gt;
 </description>
     </item>

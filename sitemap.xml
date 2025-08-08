@@ -1,115 +1,71 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://blog.ledigabel.com/tags/actions/</loc>
     <lastmod>2020-08-12T22:09:43+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.ledigabel.com/posts/moved-to-github-custom/</loc>
     <lastmod>2020-08-12T22:09:43+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.ledigabel.com/tags/github/</loc>
     <lastmod>2020-08-12T22:09:43+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.ledigabel.com/tags/hugo/</loc>
     <lastmod>2020-08-12T22:09:43+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.ledigabel.com/posts/</loc>
     <lastmod>2020-08-12T22:09:43+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.ledigabel.com/</loc>
     <lastmod>2020-08-12T22:09:43+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.ledigabel.com/tags/ssl/</loc>
     <lastmod>2020-08-12T22:09:43+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.ledigabel.com/tags/</loc>
     <lastmod>2020-08-12T22:09:43+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.ledigabel.com/tags/automation/</loc>
     <lastmod>2020-05-21T08:43:54+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.ledigabel.com/categories/</loc>
     <lastmod>2020-05-21T08:43:54+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.ledigabel.com/posts/hugo-and-github-actions/</loc>
     <lastmod>2020-05-21T08:43:54+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.ledigabel.com/categories/tech/</loc>
     <lastmod>2020-05-21T08:43:54+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.ledigabel.com/categories/experiment/</loc>
     <lastmod>2020-04-25T13:36:22+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.ledigabel.com/posts/helm-operator/</loc>
     <lastmod>2020-04-25T13:36:22+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.ledigabel.com/tags/helm/</loc>
     <lastmod>2020-04-25T13:36:22+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.ledigabel.com/tags/k8s/</loc>
     <lastmod>2020-04-25T13:36:22+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.ledigabel.com/tags/minikube/</loc>
     <lastmod>2020-04-25T13:36:22+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.ledigabel.com/tags/blog/</loc>
     <lastmod>2019-10-09T11:33:46+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.ledigabel.com/categories/info/</loc>
     <lastmod>2019-10-09T11:33:46+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.ledigabel.com/tags/markdown/</loc>
     <lastmod>2019-10-09T11:33:46+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.ledigabel.com/posts/my-first-post/</loc>
     <lastmod>2019-10-09T11:33:46+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.ledigabel.com/tags/test/</loc>
     <lastmod>2019-10-09T11:33:46+01:00</lastmod>
   </url>
-  
 </urlset>
