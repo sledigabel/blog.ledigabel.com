@@ -1,0 +1,66 @@
+.post-list {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+  border: none;
+}
+
+.post-list th {
+  text-align: left;
+  padding: 1rem;
+  border: none;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.15);
+  font-weight: 500;
+}
+
+.post-list td {
+  padding: 1rem;
+  border: none;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.15);
+}
+
+/* Remove border from the last row */
+.post-list tr:last-child td {
+  border-bottom: none;
+}
+
+.post-list td.date {
+  width: 120px;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--fg-color);
+  opacity: 0.7;
+}
+
+.post-list td.title a {
+  text-decoration: none;
+  font-weight: normal;
+  color: var(--fg-color);
+}
+
+.post-list td.title a:hover {
+  color: var(--link-hover-color);
+}
+
+/* Dark mode specific overrides - need to be more specific to override theme defaults */
+body.colorscheme-dark .post-list td,
+body.colorscheme-dark .post-list th {
+  border: none !important;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.15) !important;
+}
+
+/* Remove border from the last row in dark mode too */
+body.colorscheme-dark .post-list tr:last-child td {
+  border-bottom: none !important;
+}
+
+body.colorscheme-dark .post-list td.date {
+  opacity: 0.6;
+}
+
+body.colorscheme-dark .post-list td.title a {
+  color: var(--fg-color);
+}
+
+body.colorscheme-dark .post-list td.title a:hover {
+  color: var(--link-hover-color);
+}

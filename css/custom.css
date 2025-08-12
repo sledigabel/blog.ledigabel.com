@@ -31,7 +31,7 @@ body.colorscheme-light {
   
   background-color: var(--body-bg) !important;
   color: var(--fg-color) !important;
-  font-family: 'Lato', sans-serif;
+  font-family: 'JetBrains Mono', monospace;
 }
 
 /* Make sure content area gets proper background in light mode */
@@ -50,7 +50,7 @@ body.colorscheme-dark {
   --border-color: #333333;
   
   /* Apply terminal-like styling for the entire dark mode */
-  font-family: 'Source Code Pro', monospace;
+  font-family: 'JetBrains Mono', monospace;
   color: var(--fg-color) !important;
   background-color: var(--body-bg) !important;
 }
@@ -207,24 +207,22 @@ body.colorscheme-dark .highlight .n {
   color: #33ff33;
 } /* Name */
 
-/* Adjust link styles in dark mode for better contrast */
 body.colorscheme-dark a {
   color: var(--link-color);
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 body.colorscheme-dark a:hover {
   color: var(--link-hover-color);
-  text-decoration: none;
+  text-decoration: underline;
 }
 
-/* Link styles for light mode */
 body.colorscheme-light a {
   color: var(--link-color);
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 body.colorscheme-light a:hover {
   color: var(--link-hover-color);
-  text-decoration: none;
+  text-decoration: underline;
 }
